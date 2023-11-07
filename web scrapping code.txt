@@ -1,0 +1,32 @@
+import requests
+from bs4 import BeautifulSoup
+
+def get_latest_python_articles():
+ url='https://www.python.org/'
+ 
+    
+# Making a GET request
+r = requests.get(url ,verify=False)
+
+# check status code for response received
+# success code - 200
+print(r)
+
+# Parsing the HTML
+if r.status_code==200:
+ soup = BeautifulSoup(r.text, "html.parser")
+ latest_articles=[]
+
+for article in soup.select(".blog-widget li"):
+   title=article.a.text.strip()
+   latest_articles.append(title)
+   print(latest_articles)
+  
+else:
+    print(f"failed to retrieve data. status code: {r.status_code}")
+
+
+
+
+
+

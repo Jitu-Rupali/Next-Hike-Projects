@@ -1,0 +1,15 @@
+string = """
+Washington (CNN)John Bolton had to go -- because he wanted to cancel President Donald Trump's worldwide reality show.\nFor a time the now ex-national security adviser, who first caught Trump's eye with his tough talk on Fox News, was useful to the President -- sharing his desire to shake up the globe.\nBut like everyone else in Trump's dysfunctional foreign policy team, Bolton wore out his welcome, standing in the way of his boss' impetuous instincts and seeking a share of the spotlight.\nOnly in the bizarre Trump orbit could the exit of a national security adviser seen as an ideologue and aggressive hawk also be perceived in some ways as the removal of a stabilizing force. But he did have a view of American interests and the use of US power that while hardline was predictable and logical and positioned within the historic boundaries of US diplomacy.\nLike everything in Trump's foreign policy, there is a political explanation for the latest storm that rocked the White House.
+"""
+
+string=string.strip()
+words = list(string.split(" "))
+for word in words:
+    print(word)
+word_count = {}
+for word in words:
+    if word not in word_count:
+        word_count[word] = 1
+    elif word in word_count:
+        word_count[word] += 1
+print(word_count)
